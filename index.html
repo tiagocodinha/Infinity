@@ -72,6 +72,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário</title>
+
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	
 </head>
 <body>
     <h1>Inscreva-se</h1>
@@ -81,6 +84,8 @@
 
         <label for="phone">Número de Telefone:</label><br>
         <input type="text" id="phone" name="phone" required><br><br>
+
+	<div class="g-recaptcha" data-sitekey="6LdJLpgqAAAAAFTT1kzO8bFZQ-7cisrxS6DqFjt6"></div>
 
         <button type="submit">Enviar</button>
     </form>
