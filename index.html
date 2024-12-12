@@ -15,6 +15,7 @@
 		<header id="header">
 			<div class="content">
 					<img src="images/logo-site.svg" alt="logo" id="logo" />
+                    <div class="horizontal-line"></div>
 				</a>
 				<p>Bailes de Gala</p>
 				<ul class="actions">
@@ -27,7 +28,6 @@
 					<video id="videobaile" src="images/Video_Baile_Finalistas.mp4" alt="" autoplay loop muted></video>
 				</div>
 			</div>
-            <div class="line"></div>
 		</header>
 		
 		<style>
@@ -53,17 +53,38 @@
 
     }
 
+    .horizontal-line {
+        position: absolute; /* Para posicionamento preciso */
+        top: 35%; /* Ajusta a linha para ficar abaixo do logotipo */
+        left: -190%; /* Inicia no canto esquerdo */
+        height: 2px; /* Espessura da linha */
+        width: 1000; /* Inicialmente ocupa metade da largura */
+        background-color: white; /* Cor da linha */
+        z-index: 10; /* Coloca a linha acima de outros elementos */
+    }
 
-    /* Linha que vai desde o celular até o canto esquerdo */
-	.line {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 2px;
-		background-color: #ffffff; /* Cor da linha */
-		z-index: 5; /* Faz com que a linha fique abaixo do conteúdo */
-	}
+/* Ajuste para telas menores */
+    @media (max-width: 768px) {
+        .horizontal-line {
+            top: 45%; /* Ajusta a linha para uma posição correta em telas pequenas */
+            width: 70%; /* A linha ocupa 90% da largura disponível */
+            left: 5%; /* Adiciona margem de 5% de ambos os lados */
+        }
+    }
+
+/* Ajuste para telas muito pequenas, como celulares */
+    @media (max-width: 480px) {
+        .horizontal-line {
+            top: 50%; /* Ajusta a posição ainda mais abaixo, se necessário */
+            width: 80%; /* A linha ocupa 80% da largura */
+            left: 10%; /* Adiciona 10% de margem lateral */
+        }
+    }
+
+/* Para garantir que o header seja o contêiner de referência */
+    #header {
+        position: relative; /* Torna o `header` o contêiner pai da linha */
+    }
 
     #header .image.phone video {
         max-width: 100%;
