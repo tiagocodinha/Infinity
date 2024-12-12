@@ -218,14 +218,28 @@
         <div class="phone-container">
             <input type="tel" id="phone" name="phone" required>
         </div>
-        
+
+        <input type="hidden" id="countryCode" name="countryCode">
+
         <script>
             const input = document.querySelector("#phone");
-            window.intlTelInput(input, {
+            const countryCodeInput = document.querySelector("#countryCode");
+
+            const iti = window.intlTelInput(input, {
                 initialCountry: "pt", // Define o país inicial (exemplo: Portugal)
                 preferredCountries: ["pt"], // Define os países preferidos no topo da lista
                 utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // Necessário para formatação e validação
             });
+
+            // Atualiza o campo oculto com o código do país sempre que o usuário altera a seleção
+            input.addEventListener('countrychange', () => {
+                const countryData = iti.getSelectedCountryData();
+                countryCodeInput.value = countryData.dialCode; // Armazena o código do país (prefixo)
+            });
+
+            // Define o valor inicial do prefixo ao carregar a página
+            const initialCountryData = iti.getSelectedCountryData();
+            countryCodeInput.value = initialCountryData.dialCode;
         </script>
 
 
