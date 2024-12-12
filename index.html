@@ -232,6 +232,9 @@
 
         <label for="name">Nome Completo:</label><br>
         <input type="text" id="name" name="name" required><br><br>
+        <label for="name">E-mail:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
 
             <style>
                 /* Estilos para o campo de Nome */
@@ -314,7 +317,25 @@
                 /* Força o alinhamento correto da bandeira e do número */
                 .iti__country {
                     display: flex; /* Garante que a bandeira e o campo fiquem alinhados */
-                }                
+                }   
+                
+                
+                input[type="email"] {
+                    width: 100%; /* Faz o campo ocupar 100% da largura disponível */
+                    max-width: 600px; /* Define um tamanho máximo para o campo */
+                    height: 40px; /* Mantém a altura constante */
+                    font-size: 14px;
+                    padding: 10px; /* Adiciona espaçamento interno ao campo */
+                    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+                    margin-bottom: 20px; /* Espaço abaixo do campo */
+                }
+
+                /* Responsividade para telas menores */
+                @media (max-width: 768px) {
+                    input[type="email"] {
+                        max-width: 100%; /* O campo ocupa 100% da largura disponível em telas menores */
+                    }
+                }
             </style>
 
 
