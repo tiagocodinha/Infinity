@@ -1,4 +1,14 @@
 /* Header */
+
+#header .content {
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    text-align: center; /* Garante que o texto fique centralizado */
+    margin: auto; /* Centraliza o conteúdo */ 
+}
+
 #header .actions {
     display: flex;
     gap: 10px;
@@ -24,7 +34,6 @@
     width: 100%; /* Fazer o vídeo ocupar toda a largura do contêiner */
     height: auto; /* Manter a proporção do vídeo */
     object-fit: cover; /* Garantir que o vídeo se ajuste sem deformar */
-    border-radius: 20px; /* Adicionar cantos arredondados para simular o telemóvel */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Simular uma moldura */
 }
 
