@@ -1,78 +1,165 @@
 <html>
+	<head>
+		<meta charset="utf-8" />
+        <meta property="og:title" content="Your Infinity" />
+        <meta property="og:description" content="O Teu Baile de Gala!">
+        <meta property="og:image" content="images/favicon.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+        <link rel="icon" href="images/favicon.svg" type="image/x-icon">
+        <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+        <title>Your Infinity</title>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="content">
+					<img src="images/logo-site.svg" alt="logo" id="logo" />
+                    <div class="horizontal-line"></div>
+				</a>
+				<p>Bailes de Gala</p>
+				<ul class="actions">
+					<li style="width: 140px;"></li> <!-- Espaço vazio para manter a largura -->
+					<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Inscreve-te</a></li>
+				</ul>
+			</div>
+			<div class="image phone">
+				<div class="inner">
+					<video id="videobaile" src="images/Video_Baile_Finalistas.mp4" alt="" autoplay loop muted></video>
+				</div>
+			</div>
+		</header>
+		
+		<style>
+			#header .actions {
+				display: flex;
+				gap: 10px;
+			}
+		
+			#header .actions li {
+				list-style: none;
+			}
+		
+			#header .actions li a {
+				display: inline-block;
+			}
+		</style>
+
+<style>
+    #header .image.phone {
+        position: relative;
+        width: auto%;
+        height: auto%;
+
+    }
+
+    .horizontal-line {
+        position: absolute; /* Para posicionamento preciso */
+        top: 35%; /* Ajusta a linha para ficar abaixo do logotipo */
+        left: -190%; /* Inicia no canto esquerdo */
+        height: 2px; /* Espessura da linha */
+        width: 1000; /* Inicialmente ocupa metade da largura */
+        background-color: white; /* Cor da linha */
+        z-index: 10; /* Coloca a linha acima de outros elementos */
+    }
+
+/* Ajuste para telas menores */
+    @media (max-width: 768px) {
+        .horizontal-line {
+            top: 50%; /* Ajusta a linha para uma posição correta em telas pequenas */
+            width: 70%; /* A linha ocupa 90% da largura disponível */
+            left: 5%; /* Adiciona margem de 5% de ambos os lados */
+        }
+    }
+
+/* Ajuste para telas muito pequenas, como celulares */
+    @media (max-width: 480px) {
+        .horizontal-line {
+            top: 40%; /* Ajusta a posição ainda mais abaixo, se necessário */
+            width: 80%; /* A linha ocupa 80% da largura */
+            left: 10%; /* Adiciona 10% de margem lateral */
+        }
+    }
+
+/* Para garantir que o header seja o contêiner de referência */
+    #header {
+        position: relative; /* Torna o `header` o contêiner pai da linha */
+    }
+
+    #header .image.phone video {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover; /* Isso mantém a proporção do vídeo e o preenche de forma adequada */
+    }
+</style>
+
+<script>
+   window.addEventListener('load', function () {
+    var video = document.getElementById('videobaile');
+    video.currentTime = 27; // Começa o vídeo aos 5 segundos
+});
+</script>
+
+		<!-- One -->
+			<section id="one" class="wrapper style2 special">
+				<!DOCTYPE html>
+<html lang="pt-BR">
+
 <head>
-    <meta charset="utf-8" />
-    <meta property="og:title" content="Your Infinity" />
-    <meta property="og:description" content="O Teu Baile de Gala!" />
-    <meta property="og:image" content="images/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/style.css" /> <!-- Estilos adicionais em uma aba separada -->
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="icon" href="images/favicon.svg" type="image/x-icon" />
-    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon" />
-    <title>Your Infinity</title>
-</head>
-<body class="is-preload">
-    <!-- Header -->
-    <header id="header">
-        <div class="content">
-            <img src="images/logo-site.svg" alt="logo" id="logo" />
-            <div class="horizontal-line"></div>
-            <p>Bailes de Gala</p>
-            <ul class="actions">
-                <li style="width: 140px;"></li>
-                <li><a href="#one" class="button icon solid fa-chevron-down scrolly">Inscreve-te</a></li>
-            </ul>
-        </div>
-        <div class="image phone">
-            <div class="inner">
-                <video id="videobaile" src="images/Video_Baile_Finalistas.mp4" alt="" autoplay loop muted></video>
-            </div>
-        </div>
-    </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        #signupForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 40vh;
+            margin: 0 auto;
+        }
 
-    <!-- One -->
-    <section id="one" class="wrapper style2 special">
-        <h1>INSCREVE-TE!</h1>
-        <form id="signupForm" method="post" onsubmit="return validarpost()">
-            <label for="school">Seleciona a tua escola:</label>
-            <select id="school" name="school" required>
-                <option value="" disabled selected style="color: gray;">Escolha uma opção</option>
-                <option value="Amadeu Gaudencio">Básica e Secundária Amadeu Gaudêncio</option>
-                <option value="D. Inês de Castro">D. Inês de Castro</option>
-                <option value="Externato Benedita">Externato Benedita</option>
-            </select>
 
-            <label for="name">Nome Completo:</label>
-            <input type="text" id="name" name="name" required>
+        @media (max-width: 768px) {
+            /* Adiciona espaço abaixo do botão enviar */
+            #signupForm button {
+                margin-bottom: 30px; /* Adiciona mais espaço entre o botão e o footer */
+            }
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
+            /* Adiciona espaço extra ao formulário, se necessário */
+            #signupForm {
+                margin-bottom: 50px; /* Garantir que haja espaço suficiente para o rodapé */
+            }
+        }
 
-            <label for="phone">Número de Telefone:</label>
-            <div class="phone-container">
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <input type="hidden" id="countryCode" name="countryCode">
 
-            <div class="g-recaptcha" id="rcaptcha" data-sitekey="6LdJLpgqAAAAAFTT1kzO8bFZQ-7cisrxS6DqFjt6"></div>
-            <span id="captcha" style="color:rgb(0, 0, 0)"></span>
+        #school {
+            margin-bottom: 40px;
+            align-items: center;
+            justify-content: center;
+        }
 
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+        input[type="text"] {
+            width: 600px;
+            height: 40px;
+            font-size: 14px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
 
-    <footer id="footer">
-        <ul class="icons">
-            <li><a href="mailto:gerall@stagelink.pt" class="icon solid fa-envelope"><span class="label">E-mail</span></a></li>
-            <li><a href="https://www.facebook.com/stagelink.pt" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-            <li><a href="https://www.instagram.com/stagelink.pt" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-        </ul>
-        <p class="copyright">&copy; Stagelink.</p>
-    </footer>
+        .phone-container {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Espaço entre os elementos */
+        }
 
+<<<<<<< HEAD
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -82,5 +169,247 @@
     <script src="assets/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script src="assets/js/macros.js"></script>
+=======
+        select {
+            width: 150px;
+            height: 40px;
+            font-size: 12px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        input#phone {
+            width: 300px;
+            height: 40px;
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 15px;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        function validarpost() {
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (recaptchaResponse.length === 0) {
+                document.getElementById('captcha').innerText = "You must complete the reCAPTCHA.";
+                return false;
+            } else {
+                document.getElementById('captcha').innerText = ""; // Limpa a mensagem de erro
+                return true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>INSCREVE-TE!</h1>
+    <form id="signupForm" method="post" onsubmit="return validarpost()">
+
+        <label for="school">Seleciona a tua escola:</label>
+        <select id="school" name="school" required>
+            <option value="" disabled selected style="color: gray;">Escolha uma opção</option>
+            <option value="Amadeu Gaudencio">Básica e Secundária Amadeu Gaudêncio</option>
+            <option value="D. Inês de Castro">D. Inês de Castro</option>
+            <option value="Externato Benedita">Externato Benedita</option>
+        </select>
+
+        <style>
+            /* Estilos para o campo de Seleção (opções) */
+            select {
+                width: 100%; /* Faz o campo ocupar 100% da largura disponível */
+                max-width: 300px; /* Define um tamanho máximo para o campo */
+                height: 40px; /* Altura constante */
+                font-size: 14px; /* Tamanho da fonte */
+                padding: 10px; /* Espaçamento interno */
+                box-sizing: border-box; /* Garante que o padding não afete a largura total */
+                margin-bottom: 20px; /* Espaço abaixo do campo */
+            }
+        
+            /* Responsividade para telas menores */
+            @media (max-width: 200px) {
+                select {
+                    max-width: 100%; /* O campo ocupa 100% da largura disponível em telas menores */
+                }
+            }
+        </style>
+        
+
+        <label for="name">Nome Completo:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="name">E-mail:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+
+            <style>
+                /* Estilos para o campo de Nome */
+                input[type="text"] {
+                    width: 100%; /* Faz o campo ocupar 100% da largura disponível */
+                    max-width: 600px; /* Define um tamanho máximo para o campo */
+                    height: 40px; /* Mantém a altura constante */
+                    font-size: 14px;
+                    padding: 10px; /* Adiciona espaçamento interno ao campo */
+                    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+                    margin-bottom: 20px; /* Espaço abaixo do campo */
+                }
+            
+                /* Responsividade para telas menores */
+                @media (max-width: 768px) {
+                    input[type="text"] {
+                        max-width: 100%; /* O campo ocupa 100% da largura disponível em telas menores */
+                    }
+                }
+            </style>
+        
+
+        <label for="phone">Número de Telefone:</label><br>
+        <div class="phone-container">
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <input type="hidden" id="countryCode" name="countryCode">
+
+        <script>
+            const input = document.querySelector("#phone");
+            const countryCodeInput = document.querySelector("#countryCode");
+
+            const iti = window.intlTelInput(input, {
+                initialCountry: "pt", // Define o país inicial (exemplo: Portugal)
+                preferredCountries: ["pt"], // Define os países preferidos no topo da lista
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // Necessário para formatação e validação
+            });
+
+            // Atualiza o campo oculto com o código do país sempre que o usuário altera a seleção
+            input.addEventListener('countrychange', () => {
+                const countryData = iti.getSelectedCountryData();
+                countryCodeInput.value = countryData.dialCode; // Armazena o código do país (prefixo)
+            });
+
+            // Define o valor inicial do prefixo ao carregar a página
+            const initialCountryData = iti.getSelectedCountryData();
+            countryCodeInput.value = initialCountryData.dialCode;
+        </script>
+
+            <style>
+                /* Contêiner que envolve a bandeira e o campo de telefone */
+                .phone-container {
+                    display: flex; /* Usamos flexbox para alinhar a bandeira e o campo */
+                    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+                    align-items: center; /* Centraliza o conteúdo verticalmente */
+                    width: 100%; /* Ocupa toda a largura disponível */
+                    margin-bottom: 20px;
+                }
+
+                /* Ajusta o espaço para o campo de telefone e bandeira */
+                .iti {
+                    display: flex; /* Flexbox para alinhar bandeira e número */
+                    align-items: center; /* Alinha a bandeira e o número verticalmente */
+                }
+
+                /* Ajusta a posição da bandeira no campo de telefone */
+                .iti__flag-container {
+                    margin-right: 10px; /* Espaço entre a bandeira e o número */
+                }
+
+                /* Estilo do campo de telefone */
+                #phone {
+                    padding-left: 50px !important; /* Aplicando padding suficiente à esquerda do número */
+                    width: 200px; /* Largura do campo de telefone */
+                    box-sizing: border-box; /* Garante que o padding não afete a largura */
+                }
+
+                /* Força o alinhamento correto da bandeira e do número */
+                .iti__country {
+                    display: flex; /* Garante que a bandeira e o campo fiquem alinhados */
+                }   
+                
+                
+                input[type="email"] {
+                    width: 100%; /* Faz o campo ocupar 100% da largura disponível */
+                    max-width: 600px; /* Define um tamanho máximo para o campo */
+                    height: 40px; /* Mantém a altura constante */
+                    font-size: 14px;
+                    padding: 10px; /* Adiciona espaçamento interno ao campo */
+                    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+                    margin-bottom: 20px; /* Espaço abaixo do campo */
+                }
+
+                /* Responsividade para telas menores */
+                @media (max-width: 768px) {
+                    input[type="email"] {
+                        max-width: 100%; /* O campo ocupa 100% da largura disponível em telas menores */
+                    }
+                }
+            </style>
+
+
+
+
+
+
+
+        <div class="g-recaptcha" id="rcaptcha" data-sitekey="6LdJLpgqAAAAAFTT1kzO8bFZQ-7cisrxS6DqFjt6" style="margin-bottom: 20px;"></div>
+        <span id="captcha" style="color:rgb(0, 0, 0)"></span>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwU6WY6Vax4jDq_7Rd_fbwkL6Y48FFR6MYSBSWVXJ0HGcwuRi4lxaLjDcqFWyd_RMoP/exec';
+        const form = document.getElementById('signupForm');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (!validarpost()) return; // Impede o envio se o reCAPTCHA não estiver validado
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(scriptURL, { method: 'POST', body: formData });
+                if (response.ok) {
+                    window.location.href = "thankyou.html";
+                } else {
+                    alert('Ocorreu um erro ao enviar os dados.');
+                }
+            } catch (error) {
+                alert('Erro ao conectar-se ao servidor.');
+                console.error(error);
+            }
+        });
+    </script>
+>>>>>>> parent of ae89a17 (Update index.html)
 </body>
+
+</html>
+			</section>
+
+
+            <footer id="footer">
+                <ul class="icons">
+                    <!-- Ícone de E-mail com link para o mailto -->
+                    <li><a href="mailto:gerall@stagelink.pt" class="icon solid fa-envelope"><span class="label">E-mail</span></a></li>
+            
+                    <!-- Ícones de Redes Sociais -->
+                    <li><a href="https://www.facebook.com/stagelink.pt" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                    <li><a href="https://www.instagram.com/stagelink.pt" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                </ul>
+                <p class="copyright">&copy; Stagelink.</p>
+            </footer>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
