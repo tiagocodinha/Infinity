@@ -350,27 +350,39 @@
     </form>
 
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwU6WY6Vax4jDq_7Rd_fbwkL6Y48FFR6MYSBSWVXJ0HGcwuRi4lxaLjDcqFWyd_RMoP/exec';
-        const form = document.getElementById('signupForm');
-
-        form.addEventListener('submit', async (e) => {
+                form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            if (!validarpost()) return; // Impede o envio se o reCAPTCHA não estiver validado
 
+            // Valida o reCAPTCHA
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (!recaptchaResponse) {
+                document.getElementById('captcha-error').textContent = 'Por favor, complete o reCAPTCHA';
+                return;
+            }
+
+            // Captura os dados do formulário
             const formData = new FormData(form);
+            formData.append('recaptcha', recaptchaResponse);
+            formData.append('value', '20'); // Valor fixo de 20€
 
             try {
-                const response = await fetch(scriptURL, { method: 'POST', body: formData });
+                const response = await fetch(scriptURL, {
+                    method: 'POST',
+                    body: formData
+                });
+
                 if (response.ok) {
-                    window.location.href = "thankyou.html";
+                    const result = await response.text(); // Apps Script retorna texto
+                    alert(`Sucesso! Dados enviados: ${result}`);
                 } else {
-                    alert('Ocorreu um erro ao enviar os dados.');
+                    alert('Ocorreu um erro ao processar o pagamento.');
                 }
             } catch (error) {
+                console.error('Erro ao conectar-se ao servidor:', error);
                 alert('Erro ao conectar-se ao servidor.');
-                console.error(error);
             }
         });
+
     </script>
 </body>
 
