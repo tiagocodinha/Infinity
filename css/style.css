@@ -1,110 +1,304 @@
-/* Estilos Gerais */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+/* Cores */
+:root {
+    --primary-color: #6c63ff; /* Roxo vibrante */
+    --secondary-color: #ff6b6b; /* Vermelho coral */
+    --accent-color: #feca57; /* Amarelo dourado */
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --light-text-color: #fff;
 }
 
+/* Estilos Gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6; /* Melhora a legibilidade */
+}
+
+/* Reset de Estilos */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* Header */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
 .logo {
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
+    color: var(--light-text-color);
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
+    gap: 30px;
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
+    color: var(--light-text-color);
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-section {
-    padding: 20px;
-    margin: 20px 0;
-    background-color: #fff;
-    border-radius: 8px;
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Efeito de hover */
 }
 
-h1, h2 {
-    color: #555;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-/* Estilos Específicos */
+/* Hero Section */
 #hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/baile-exemplo.jpg') center/cover no-repeat;
+    color: var(--light-text-color);
     text-align: center;
-    padding: 50px 20px;
-    background-color: #eee;
+    padding: 150px 30px;
+    position: relative; /* Para posicionar o conteúdo */
+}
+
+#hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no texto */
+}
+
+#hero p {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .cta-button {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
+    padding: 12px 30px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
-#formulario form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
+.cta-button:hover {
+    background-color: #e4b23f;
+}
+
+/* Sobre a Your Infinity */
+#sobre {
+    padding: 80px 30px;
+}
+
+#sobre h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#sobre p {
+    font-size: 1.1em;
+    max-width: 800px;
     margin: 0 auto;
+    text-align: center;
 }
 
-#formulario label {
-    margin-top: 10px;
+/* Escolha o seu Baile */
+#bailes {
+    padding: 80px 30px;
+    text-align: center;
+    background-color: #fff;
 }
 
-#formulario input,
-#formulario textarea {
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#bailes h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
 }
 
-#formulario button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: #fff;
+#selecao-baile {
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    width: 300px;
+    margin-bottom: 20px;
+    appearance: none; /* Remove estilos padrão do select */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%236c63ff' d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 16px;
+}
+
+/* Formulário */
+#formulario {
+    padding: 80px 30px;
+    background-color: var(--background-color);
+}
+
+#formulario h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#form-contacto {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+}
+
+#form-contacto label {
+    font-weight: 600;
+    display: block;
+}
+
+#form-contacto input,
+#form-contacto textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1em;
+}
+
+#form-contacto button {
+    padding: 14px 30px;
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-size: 1.1em;
     cursor: pointer;
-    margin-top: 15px;
+    transition: background-color 0.3s ease;
 }
 
-/* Estilos Responsivos */
+#form-contacto button:hover {
+    background-color: #e35454;
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-color);
+    color: var(--light-text-color);
+    padding: 50px 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer .contactos,
+footer .redes-sociais {
+    margin-bottom: 20px;
+}
+
+footer h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: var(--light-text-color);
+    display: block;
+    margin-top: 8px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+}
+
+/* Detalhes do Baile (baile.html) */
+#detalhes-baile {
+    padding: 80px 30px;
+    text-align: center;
+}
+
+#detalhes-baile h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
+#detalhes-baile img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra na imagem */
+}
+
+/* Pagamento (pagamento.html) */
+#pagamento {
+    padding: 80px 30px;
+}
+
+#pagamento h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#form-pagamento {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+}
+
+#form-pagamento label {
+    font-weight: 600;
+    display: block;
+}
+
+#form-pagamento input,
+#form-pagamento select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1em;
+}
+
+#form-pagamento button {
+    padding: 14px 30px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#form-pagamento button:hover {
+    background-color: #5a52c7;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -112,20 +306,29 @@ footer {
     }
 
     nav ul {
-        margin-top: 10px;
+        margin-top: 15px;
         flex-direction: column;
-    }
-
-    nav ul li {
-        margin-left: 0;
-        margin-bottom: 10px;
+        gap: 15px;
     }
 
     footer {
         flex-direction: column;
+        text-align: center;
     }
 
     footer div {
-        margin-bottom: 15px;
+        margin-bottom: 30px;
+    }
+
+    #hero {
+        padding: 100px 20px;
+    }
+
+    #hero h1 {
+        font-size: 3em;
+    }
+
+    #hero p {
+        font-size: 1.1em;
     }
 }
